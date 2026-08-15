@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Raza Khan Engineering Workshop</title>
 
 <style>
@@ -15,117 +14,37 @@
 
 body{
     font-family:Arial,sans-serif;
-    background:#f1f1f1;
+    background:#f2f2f2;
     color:#222;
 }
 
-/* ===== WORKSHOP BANNER ===== */
-
+/* WORKSHOP BANNER */
 .banner{
-    min-height:620px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:#111;
+    padding:15px;
     text-align:center;
-    color:white;
-    background:
-        radial-gradient(circle at 20% 30%,#555 0,#222 25%,transparent 50%),
-        radial-gradient(circle at 80% 70%,#555 0,#222 25%,transparent 50%),
-        linear-gradient(135deg,#050505,#202020 50%,#090909);
 }
 
-/* Decorative workshop lines */
-.banner:before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border:3px solid rgba(255,180,0,.18);
-    border-radius:50%;
-    top:-180px;
-    left:-150px;
-}
-
-.banner:after{
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border:3px solid rgba(255,180,0,.15);
-    border-radius:50%;
-    bottom:-180px;
-    right:-120px;
-}
-
-.banner-content{
-    position:relative;
-    z-index:2;
+.banner img{
     width:100%;
-    max-width:1000px;
-    padding:30px 20px;
+    max-width:1200px;
+    height:auto;
+    display:block;
+    margin:auto;
+    border-radius:10px;
 }
 
-.tools{
-    font-size:65px;
-    margin-bottom:15px;
+.banner-buttons{
+    padding:20px 10px;
 }
 
-.tag{
+.banner-buttons a{
     display:inline-block;
-    background:#f5b400;
-    color:#111;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    font-size:14px;
-    letter-spacing:1px;
-    margin-bottom:22px;
-}
-
-.banner h1{
-    font-size:52px;
-    line-height:1.1;
-    text-transform:uppercase;
-    margin-bottom:15px;
-    text-shadow:0 4px 15px #000;
-}
-
-.banner h1 span{
-    color:#f5b400;
-}
-
-.banner h2{
-    font-size:25px;
-    color:#ddd;
-    margin-bottom:15px;
-}
-
-.banner p{
-    font-size:18px;
-    color:#bbb;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 25px;
+    padding:14px 22px;
+    margin:6px;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
 }
 
 .call{
@@ -143,17 +62,16 @@ body{
     color:white;
 }
 
-/* ===== SECTIONS ===== */
-
+/* SECTIONS */
 section{
     max-width:1100px;
     margin:auto;
-    padding:65px 20px;
+    padding:60px 20px;
 }
 
 .title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
 .title h2{
@@ -165,35 +83,28 @@ section{
     color:#666;
 }
 
-/* ===== SERVICES ===== */
-
+/* SERVICES */
 .services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
 }
 
 .card{
     background:white;
-    padding:30px 20px;
+    padding:28px 20px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.12);
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
     border-top:4px solid #f5b400;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-7px);
 }
 
 .icon{
-    font-size:45px;
-    margin-bottom:15px;
+    font-size:42px;
+    margin-bottom:12px;
 }
 
 .card h3{
-    font-size:21px;
     margin-bottom:10px;
 }
 
@@ -202,120 +113,50 @@ section{
     line-height:1.6;
 }
 
-/* ===== ABOUT ===== */
-
+/* ABOUT */
 .about{
     background:white;
-    padding:35px;
-    border-radius:18px;
+    padding:30px;
+    border-radius:15px;
     text-align:center;
     line-height:1.8;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.about strong{
-    color:#d99c00;
-}
-
-/* ===== WHY US ===== */
-
-.dark{
-    background:#111;
-    color:white;
-    max-width:none;
-}
-
-.dark-inner{
-    max-width:1100px;
-    margin:auto;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.feature{
-    border:1px solid #444;
-    border-radius:14px;
-    padding:25px;
-    text-align:center;
-}
-
-.feature h3{
-    color:#f5b400;
-    margin:10px 0;
-}
-
-.feature p{
-    color:#bbb;
-}
-
-/* ===== CONTACT ===== */
-
+/* CONTACT */
 .contact{
     background:#222;
     color:white;
     text-align:center;
-    padding:70px 20px;
+    padding:60px 20px;
 }
 
 .contact h2{
-    font-size:38px;
+    font-size:36px;
     margin-bottom:20px;
 }
 
 .contact p{
-    color:#ddd;
     margin:10px;
-    font-size:18px;
+    color:#ddd;
 }
-
-.contact .buttons{
-    margin-top:25px;
-}
-
-/* ===== FOOTER ===== */
 
 footer{
     background:#000;
     color:#aaa;
     text-align:center;
-    padding:20px;
+    padding:18px;
 }
 
-/* ===== MOBILE ===== */
-
 @media(max-width:600px){
-
-    .banner{
-        min-height:650px;
-    }
-
-    .tools{
-        font-size:50px;
-    }
-
-    .banner h1{
-        font-size:34px;
-    }
-
-    .banner h2{
-        font-size:20px;
-    }
-
-    .banner p{
-        font-size:16px;
-    }
-
-    .btn{
-        width:100%;
-        max-width:300px;
-    }
-
     .title h2{
         font-size:30px;
+    }
+
+    .banner-buttons a{
+        display:block;
+        max-width:300px;
+        margin:8px auto;
     }
 }
 </style>
@@ -323,66 +164,39 @@ footer{
 
 <body>
 
-<!-- ================= BANNER ================= -->
-
+<!-- WORKSHOP BANNER -->
 <div class="banner">
 
-    <div class="banner-content">
+    <img src="file_00000000ee14824381b2879e249064ba.png"
+         alt="Raza Khan Engineering Workshop">
 
-        <div class="tools">
-            🔧 ⚙️ 🚜
-        </div>
+    <div class="banner-buttons">
 
-        <div class="tag">
-            PROFESSIONAL ENGINEERING WORKSHOP
-        </div>
+        <a class="call" href="tel:9804483054">
+            📞 Call Now
+        </a>
 
-        <h1>
-            RAZA KHAN<br>
-            <span>ENGINEERING WORKSHOP</span>
-        </h1>
+        <a class="whatsapp"
+           href="https://wa.me/9779804483054"
+           target="_blank">
+            💬 WhatsApp
+        </a>
 
-        <h2>
-            Welding • Lathe • Tractor • JCB • Fabrication
-        </h2>
-
-        <p>
-            Quality Engineering & Fabrication Work
-        </p>
-
-        <div class="buttons">
-
-            <a class="btn call"
-               href="tel:9804483054">
-               📞 Call Now
-            </a>
-
-            <a class="btn whatsapp"
-               href="https://wa.me/9779804483054"
-               target="_blank">
-               💬 WhatsApp
-            </a>
-
-            <a class="btn map"
-               href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
-               target="_blank">
-               📍 Get Directions
-            </a>
-
-        </div>
+        <a class="map"
+           href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
+           target="_blank">
+            📍 Get Directions
+        </a>
 
     </div>
-
 </div>
 
-
-<!-- ================= SERVICES ================= -->
-
+<!-- SERVICES -->
 <section>
 
 <div class="title">
     <h2>Our Services</h2>
-    <p>Professional engineering services</p>
+    <p>Professional Engineering & Fabrication Services</p>
 </div>
 
 <div class="services">
@@ -390,13 +204,13 @@ footer{
 <div class="card">
 <div class="icon">🔧</div>
 <h3>Welding Work</h3>
-<p>Professional welding and metal fabrication work.</p>
+<p>Professional welding and fabrication work.</p>
 </div>
 
 <div class="card">
 <div class="icon">⚙️</div>
 <h3>Lathe Work</h3>
-<p>Bushing, bearing and precision machine work.</p>
+<p>Bushing, bearing and machine work.</p>
 </div>
 
 <div class="card">
@@ -408,7 +222,7 @@ footer{
 <div class="card">
 <div class="icon">🏗️</div>
 <h3>JCB Work</h3>
-<p>Heavy machine engineering and repair work.</p>
+<p>Heavy machine engineering work.</p>
 </div>
 
 <div class="card">
@@ -420,136 +234,75 @@ footer{
 <div class="card">
 <div class="icon">🛠️</div>
 <h3>Custom Work</h3>
-<p>Custom engineering and fabrication solutions.</p>
+<p>Custom engineering and fabrication work.</p>
 </div>
 
 </div>
-
 </section>
 
-
-<!-- ================= ABOUT ================= -->
-
+<!-- ABOUT -->
 <section>
 
 <div class="title">
     <h2>About Us</h2>
-    <p>Trusted engineering service</p>
 </div>
 
 <div class="about">
 
 <p>
-<strong>Raza Khan Engineering Workshop</strong>
-mein welding, lathe, tractor, JCB aur engineering
-se jude kaam professional tarike se kiye jate hain.
+<strong>Raza Khan Engineering Workshop</strong> mein
+welding, lathe, tractor, JCB aur engineering se jude
+kaam professional tarike se kiye jate hain.
 </p>
 
 <br>
 
 <p>
-Tractor ka bushing, bearing, chhadni,
-fabrication aur custom engineering work bhi kiya jata hai.
+Tractor ka bushing, bearing, chhadni aur fabrication
+ka kaam bhi kiya jata hai.
 </p>
 
 <br>
 
 <p>
-📍 <strong>Ramgram-17, Piprahiya, Nawalparasi, Nepal</strong>
+📍 Ramgram-17, Piprahiya, Nawalparasi, Nepal
 </p>
 
 </div>
-
 </section>
 
-
-<!-- ================= WHY US ================= -->
-
-<div class="dark">
-
-<div class="dark-inner">
-
-<section>
-
-<div class="title">
-    <h2>Why Choose Us?</h2>
-    <p style="color:#aaa;">Reliable service for your engineering needs</p>
-</div>
-
-<div class="features">
-
-<div class="feature">
-<div class="icon">⭐</div>
-<h3>Quality Work</h3>
-<p>Professional and reliable workmanship.</p>
-</div>
-
-<div class="feature">
-<div class="icon">⚡</div>
-<h3>Fast Service</h3>
-<p>Efficient work with attention to your time.</p>
-</div>
-
-<div class="feature">
-<div class="icon">🛠️</div>
-<h3>Experienced</h3>
-<p>Engineering and fabrication experience.</p>
-</div>
-
-<div class="feature">
-<div class="icon">🤝</div>
-<h3>Trusted</h3>
-<p>Honest and customer-focused service.</p>
-</div>
-
-</div>
-
-</section>
-
-</div>
-</div>
-
-
-<!-- ================= CONTACT ================= -->
-
+<!-- CONTACT -->
 <div class="contact">
 
 <h2>Contact Us</h2>
 
 <p>📞 9804483054</p>
+<p>📍 Ramgram-17, Piprahiya, Nawalparasi, Nepal</p>
 
-<p>
-📍 Ramgram-17, Piprahiya,
-Nawalparasi, Nepal
-</p>
+<div class="banner-buttons">
 
-<div class="buttons">
-
-<a class="btn call"
-href="tel:9804483054">
+<a class="call" href="tel:9804483054">
 📞 Call Now
 </a>
 
-<a class="btn whatsapp"
+<a class="whatsapp"
 href="https://wa.me/9779804483054"
 target="_blank">
 💬 Chat on WhatsApp
 </a>
 
-<a class="btn map"
+<a class="map"
 href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
 target="_blank">
 📍 Open Location
 </a>
 
 </div>
-
 </div>
-
 
 <footer>
 © 2026 Raza Khan Engineering Workshop
 </footer>
 
 </body>
-    </html>
+</html>
