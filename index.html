@@ -8,63 +8,103 @@
 
 <style>
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
+    font-family:Arial,sans-serif;
+    background:#f1f1f1;
     color:#222;
 }
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
-    linear-gradient(135deg,#111,#333);
-    color:white;
+/* ===== WORKSHOP BANNER ===== */
+
+.banner{
+    min-height:620px;
+    position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 30%,#555 0,#222 25%,transparent 50%),
+        radial-gradient(circle at 80% 70%,#555 0,#222 25%,transparent 50%),
+        linear-gradient(135deg,#050505,#202020 50%,#090909);
+}
+
+/* Decorative workshop lines */
+.banner:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:3px solid rgba(255,180,0,.18);
+    border-radius:50%;
+    top:-180px;
+    left:-150px;
+}
+
+.banner:after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border:3px solid rgba(255,180,0,.15);
+    border-radius:50%;
+    bottom:-180px;
+    right:-120px;
+}
+
+.banner-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:1000px;
     padding:30px 20px;
 }
 
-.hero-content{
-    max-width:900px;
+.tools{
+    font-size:65px;
+    margin-bottom:15px;
 }
 
-.badge{
+.tag{
     display:inline-block;
     background:#f5b400;
     color:#111;
-    padding:8px 18px;
+    padding:10px 22px;
     border-radius:30px;
     font-weight:bold;
-    margin-bottom:20px;
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:22px;
 }
 
-.hero h1{
-    font-size:48px;
-    line-height:1.15;
-    margin-bottom:15px;
+.banner h1{
+    font-size:52px;
+    line-height:1.1;
     text-transform:uppercase;
+    margin-bottom:15px;
+    text-shadow:0 4px 15px #000;
 }
 
-.hero h1 span{
+.banner h1 span{
     color:#f5b400;
 }
 
-.hero p{
-    font-size:20px;
+.banner h2{
+    font-size:25px;
     color:#ddd;
+    margin-bottom:15px;
+}
+
+.banner p{
+    font-size:18px;
+    color:#bbb;
     margin-bottom:30px;
 }
 
@@ -77,7 +117,7 @@ body{
 
 .btn{
     display:inline-block;
-    padding:15px 24px;
+    padding:15px 25px;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
@@ -103,28 +143,30 @@ body{
     color:white;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
+
 section{
-    padding:65px 20px;
     max-width:1100px;
     margin:auto;
+    padding:65px 20px;
 }
 
-.section-title{
+.title{
     text-align:center;
     margin-bottom:40px;
 }
 
-.section-title h2{
+.title h2{
     font-size:36px;
     margin-bottom:10px;
 }
 
-.section-title p{
+.title p{
     color:#666;
 }
 
-/* SERVICES */
+/* ===== SERVICES ===== */
+
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -136,13 +178,13 @@ section{
     padding:30px 20px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.10);
-    transition:.3s;
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
     border-top:4px solid #f5b400;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-7px);
 }
 
 .icon{
@@ -151,8 +193,8 @@ section{
 }
 
 .card h3{
-    margin-bottom:10px;
     font-size:21px;
+    margin-bottom:10px;
 }
 
 .card p{
@@ -160,28 +202,30 @@ section{
     line-height:1.6;
 }
 
-/* ABOUT */
+/* ===== ABOUT ===== */
+
 .about{
-    background:#fff;
-    border-radius:18px;
+    background:white;
     padding:35px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-radius:18px;
     text-align:center;
     line-height:1.8;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .about strong{
     color:#d99c00;
 }
 
-/* WHY US */
-.why{
+/* ===== WHY US ===== */
+
+.dark{
     background:#111;
     color:white;
     max-width:none;
 }
 
-.why-inner{
+.dark-inner{
     max-width:1100px;
     margin:auto;
 }
@@ -193,10 +237,10 @@ section{
 }
 
 .feature{
-    text-align:center;
-    padding:25px;
     border:1px solid #444;
-    border-radius:12px;
+    border-radius:14px;
+    padding:25px;
+    text-align:center;
 }
 
 .feature h3{
@@ -204,7 +248,12 @@ section{
     margin:10px 0;
 }
 
-/* CONTACT */
+.feature p{
+    color:#bbb;
+}
+
+/* ===== CONTACT ===== */
+
 .contact{
     background:#222;
     color:white;
@@ -218,46 +267,55 @@ section{
 }
 
 .contact p{
-    margin:10px 0;
-    font-size:18px;
     color:#ddd;
+    margin:10px;
+    font-size:18px;
 }
 
-.contact-buttons{
+.contact .buttons{
     margin-top:25px;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
+
 footer{
     background:#000;
     color:#aaa;
     text-align:center;
     padding:20px;
-    font-size:14px;
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
+
 @media(max-width:600px){
 
-    .hero h1{
+    .banner{
+        min-height:650px;
+    }
+
+    .tools{
+        font-size:50px;
+    }
+
+    .banner h1{
         font-size:34px;
     }
 
-    .hero p{
-        font-size:17px;
+    .banner h2{
+        font-size:20px;
     }
 
-    .section-title h2{
-        font-size:30px;
-    }
-
-    .about{
-        padding:25px 18px;
+    .banner p{
+        font-size:16px;
     }
 
     .btn{
         width:100%;
         max-width:300px;
+    }
+
+    .title h2{
+        font-size:30px;
     }
 }
 </style>
@@ -265,13 +323,18 @@ footer{
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<!-- ================= BANNER ================= -->
 
-    <div class="hero-content">
+<div class="banner">
 
-        <div class="badge">
-            🔧 PROFESSIONAL ENGINEERING WORKSHOP
+    <div class="banner-content">
+
+        <div class="tools">
+            🔧 ⚙️ 🚜
+        </div>
+
+        <div class="tag">
+            PROFESSIONAL ENGINEERING WORKSHOP
         </div>
 
         <h1>
@@ -279,26 +342,31 @@ footer{
             <span>ENGINEERING WORKSHOP</span>
         </h1>
 
-        <p>
+        <h2>
             Welding • Lathe • Tractor • JCB • Fabrication
+        </h2>
+
+        <p>
+            Quality Engineering & Fabrication Work
         </p>
 
         <div class="buttons">
 
-            <a class="btn call" href="tel:9804483054">
-                📞 Call Now
+            <a class="btn call"
+               href="tel:9804483054">
+               📞 Call Now
             </a>
 
             <a class="btn whatsapp"
                href="https://wa.me/9779804483054"
                target="_blank">
-                💬 WhatsApp
+               💬 WhatsApp
             </a>
 
             <a class="btn map"
                href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
                target="_blank">
-                📍 Get Directions
+               📍 Get Directions
             </a>
 
         </div>
@@ -308,228 +376,179 @@ footer{
 </div>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
+
 <section>
 
-    <div class="section-title">
+<div class="title">
+    <h2>Our Services</h2>
+    <p>Professional engineering services</p>
+</div>
 
-        <h2>Our Services</h2>
+<div class="services">
 
-        <p>
-            Professional engineering and fabrication services
-        </p>
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Welding Work</h3>
+<p>Professional welding and metal fabrication work.</p>
+</div>
 
-    </div>
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Lathe Work</h3>
+<p>Bushing, bearing and precision machine work.</p>
+</div>
 
+<div class="card">
+<div class="icon">🚜</div>
+<h3>Tractor Work</h3>
+<p>Tractor repair and engineering work.</p>
+</div>
 
-    <div class="services">
+<div class="card">
+<div class="icon">🏗️</div>
+<h3>JCB Work</h3>
+<p>Heavy machine engineering and repair work.</p>
+</div>
 
-        <div class="card">
-            <div class="icon">🔧</div>
-            <h3>Welding Work</h3>
-            <p>
-                Professional welding and metal fabrication work.
-            </p>
-        </div>
+<div class="card">
+<div class="icon">🔩</div>
+<h3>Chhadni Work</h3>
+<p>Tractor chhadni and fabrication work.</p>
+</div>
 
-
-        <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Lathe Work</h3>
-            <p>
-                Bushing, bearing and precision machine work.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🚜</div>
-            <h3>Tractor Work</h3>
-            <p>
-                Tractor repair, fabrication and engineering work.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🏗️</div>
-            <h3>JCB Work</h3>
-            <p>
-                Heavy machine repair and engineering services.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🔩</div>
-            <h3>Chhadni Work</h3>
-            <p>
-                Tractor chhadni and custom fabrication work.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🛠️</div>
-            <h3>Custom Work</h3>
-            <p>
-                Custom engineering and metal fabrication solutions.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-<section>
-
-    <div class="section-title">
-
-        <h2>About Us</h2>
-
-        <p>Quality work with professional service</p>
-
-    </div>
-
-
-    <div class="about">
-
-        <p>
-            <strong>Raza Khan Engineering Workshop</strong>
-            mein welding, lathe, tractor, JCB aur engineering
-            se jude kaam professional tarike se kiye jate hain.
-        </p>
-
-        <br>
-
-        <p>
-            Tractor ka bushing, bearing, chhadni,
-            fabrication aur custom engineering work
-            bhi kiya jata hai.
-        </p>
-
-        <br>
-
-        <p>
-            📍 <strong>Ramgram-17, Piprahiya,
-            Nawalparasi, Nepal</strong>
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- WHY CHOOSE US -->
-<div class="why">
-
-    <div class="why-inner">
-
-        <section>
-
-            <div class="section-title">
-
-                <h2>Why Choose Us?</h2>
-
-                <p style="color:#aaa;">
-                    Reliable engineering service for your work
-                </p>
-
-            </div>
-
-
-            <div class="features">
-
-                <div class="feature">
-                    <div class="icon">⭐</div>
-                    <h3>Quality Work</h3>
-                    <p>
-                        Professional and reliable workmanship.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="icon">⚡</div>
-                    <h3>Fast Service</h3>
-                    <p>
-                        We value your time and complete work efficiently.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="icon">🛠️</div>
-                    <h3>Experienced</h3>
-                    <p>
-                        Engineering and fabrication experience.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="icon">🤝</div>
-                    <h3>Trusted Service</h3>
-                    <p>
-                        Honest service for our customers.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Custom Work</h3>
+<p>Custom engineering and fabrication solutions.</p>
+</div>
 
 </div>
 
+</section>
 
-<!-- CONTACT -->
+
+<!-- ================= ABOUT ================= -->
+
+<section>
+
+<div class="title">
+    <h2>About Us</h2>
+    <p>Trusted engineering service</p>
+</div>
+
+<div class="about">
+
+<p>
+<strong>Raza Khan Engineering Workshop</strong>
+mein welding, lathe, tractor, JCB aur engineering
+se jude kaam professional tarike se kiye jate hain.
+</p>
+
+<br>
+
+<p>
+Tractor ka bushing, bearing, chhadni,
+fabrication aur custom engineering work bhi kiya jata hai.
+</p>
+
+<br>
+
+<p>
+📍 <strong>Ramgram-17, Piprahiya, Nawalparasi, Nepal</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<div class="dark">
+
+<div class="dark-inner">
+
+<section>
+
+<div class="title">
+    <h2>Why Choose Us?</h2>
+    <p style="color:#aaa;">Reliable service for your engineering needs</p>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="icon">⭐</div>
+<h3>Quality Work</h3>
+<p>Professional and reliable workmanship.</p>
+</div>
+
+<div class="feature">
+<div class="icon">⚡</div>
+<h3>Fast Service</h3>
+<p>Efficient work with attention to your time.</p>
+</div>
+
+<div class="feature">
+<div class="icon">🛠️</div>
+<h3>Experienced</h3>
+<p>Engineering and fabrication experience.</p>
+</div>
+
+<div class="feature">
+<div class="icon">🤝</div>
+<h3>Trusted</h3>
+<p>Honest and customer-focused service.</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+</div>
+
+
+<!-- ================= CONTACT ================= -->
+
 <div class="contact">
 
-    <h2>Contact Us</h2>
+<h2>Contact Us</h2>
 
-    <p>📞 9804483054</p>
+<p>📞 9804483054</p>
 
-    <p>
-        📍 Ramgram-17, Piprahiya,
-        Nawalparasi, Nepal
-    </p>
+<p>
+📍 Ramgram-17, Piprahiya,
+Nawalparasi, Nepal
+</p>
 
+<div class="buttons">
 
-    <div class="contact-buttons">
+<a class="btn call"
+href="tel:9804483054">
+📞 Call Now
+</a>
 
-        <a class="btn call"
-           href="tel:9804483054">
-            📞 Call Now
-        </a>
+<a class="btn whatsapp"
+href="https://wa.me/9779804483054"
+target="_blank">
+💬 Chat on WhatsApp
+</a>
 
+<a class="btn map"
+href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
+target="_blank">
+📍 Open Location
+</a>
 
-        <a class="btn whatsapp"
-           href="https://wa.me/9779804483054"
-           target="_blank">
-            💬 Chat on WhatsApp
-        </a>
-
-
-        <a class="btn map"
-           href="https://www.google.com/maps/search/?api=1&query=Ramgram+17+Piprahiya+Nawalparasi+Nepal"
-           target="_blank">
-            📍 Open Location
-        </a>
-
-    </div>
+</div>
 
 </div>
 
 
-<!-- FOOTER -->
 <footer>
-
-    © 2026 Raza Khan Engineering Workshop
-
+© 2026 Raza Khan Engineering Workshop
 </footer>
 
 </body>
